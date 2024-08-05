@@ -12,11 +12,14 @@ from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 from core.views import AutorViewSet, CategoriaViewSet, EditoraViewSet, LivroViewSet, UserViewSet
 
 router = DefaultRouter()
+router.register(r"autor", AutorViewSet, basename="autor")
 router.register(r"categorias", CategoriaViewSet, basename="categorias")
 router.register(r"editoras", EditoraViewSet, basename="editora")
-router.register(r"usuarios", UserViewSet, basename="usuario")
-router.register(r"autor", AutorViewSet, basename="autor")
 router.register(r"livro", LivroViewSet, basename="livro")
+router.register(r"user", UserViewSet, basename="users")
+
+
+
 
 
 urlpatterns = [
