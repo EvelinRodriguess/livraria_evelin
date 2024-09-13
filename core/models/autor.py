@@ -9,5 +9,5 @@ class Autor(models.Model):
         return f"{self.nome} ({self.id})"
 
     class Meta:
-        verbose_name ="Autor"
+        verbose_name = "Autor"
         verbose_name_plural = "Autores"

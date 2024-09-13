@@ -14,11 +14,8 @@ class UserSerializer(ModelSerializer):
         write_only=True,
     )
 
-    foto = ImageSerializer(
-        required=False,
-        read_only=True
-    )
-    
+    foto = ImageSerializer(required=False, read_only=True)
+
     class Meta:
         model = User
         fields = "__all__"
