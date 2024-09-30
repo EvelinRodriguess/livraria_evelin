@@ -1,10 +1,17 @@
 from rest_framework.serializers import (
     CharField,
-    CurrentUserDefault, # novo
-    HiddenField, # novo
+    CurrentUserDefault,
+    HiddenField,
     ModelSerializer,
     SerializerMethodField,
+    ValidationError, # novo
 )
+
+def validate(self, data):
+        if data["quantidade"] > data["livro"].quantidade:
+            raise ValidationError("Quantidade de itens maior do que a quantidade em estoque.")
+        return data
+
 from core.models import Compra, ItensCompra
 
 
